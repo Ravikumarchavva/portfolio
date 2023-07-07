@@ -2,11 +2,15 @@ import requests
 from pycaret.regression import *
 import tempfile
 import pandas as pd
+import json
 import os
 from google.cloud import storage
+with open("config.json","r") as f:
+    models=json.load(f)['models']
+with open("config.json","r") as f:
+    keys=json.load(f)['keys']
 # Set the path to your service account key file
-key_file = "healthy-genre-391115-f36176b04acf.json"
-
+key_file=keys['google-drive']
 # Set the environment variable for the key file
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file
 
@@ -14,7 +18,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file
 client = storage.Client()
 
 # Specify the GCS URI for the model
-gcs_uri = 'gs://githubml_models/ipl_models/ipl_pycaret.pkl'
+gcs_uri = models['IPL Predict']
 
 # Get the bucket and blob names from the GCS URI
 bucket_name, blob_name = gcs_uri[5:].split("/", 1)

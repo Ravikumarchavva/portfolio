@@ -22,13 +22,13 @@ h6 {
   color: #1e1e1e;
 }
 h3{
-  color:crimson;
+  color:#1e1e1e;
 }
 h2{
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size:38px;
-  color:#f2f2f2;
+  color:#1e1e1e;
   font-weight: bolder;
 }
 h5{
@@ -36,7 +36,7 @@ h5{
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align:top ;
   font-size:38px;
-  color:wheat;
+  color:#1e1e1e;
   text-underline-position: below;
 }
 a {
@@ -1318,4 +1318,21 @@ footer .credits a {
     .contactform input {
       width: 28%;
     }
+  }
+  .ipl-heading h2{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:38px;
+    color:antiquewhite;
+    font-weight: bolder;
+  }
+
+  .ipl-heading a {
+    color: #007bff; /* Set the text color */
+    text-decoration: underline; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+  }
+  
+  .ipl-heading a:hover {
+    color:navy; /* Change the text color on hover */
   }

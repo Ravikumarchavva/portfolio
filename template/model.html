@@ -66,9 +66,11 @@
                 </div>
               </div>
                   <div class="title-box-2">
+                    <div class="ipl-heading">
                     <h2 >
                       Ipl Final Score Predict
                     </h2>
+                    </div>  
                   </div>
                   <form action="{{url_for('get_ipl_fsp')}}" method="post" role="form" class="contactform">
                   <label class="form-label"> Batting Team :</label> <select name="batting_team" id="bt" required onchange="updateTeams()">
@@ -108,7 +110,7 @@
                     <label class="form-label"> current_ball:</label> <input name="current_ball" min="6.0" max="20.0" step="any" type="number" id="current_ball" placeholder="10.4(>6)" required>
                     <input type="submit" value="submit" class="button button-a button-big button-rouded">
                   </form>
-                    <div>
+                    <div class="ipl-heading">
                       <h2>Final predicted score is :{{score}}</h2>
                     </div>
                 </div>

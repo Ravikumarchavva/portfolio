@@ -98,63 +98,52 @@
         <div class="col-md-8">
           <div class="post-box">
             <div class="post-thumb">
-              <img src="{{url_for('static',filename='img/post-1.jpg')}}" class="img-fluid" alt="">
+              <img src="{{url_for('static',filename='img/ipl-fig.jpg')}}" class="img-fluid" alt="">
             </div>
             <div class="post-meta">
-              <h1 class="article-title">Lorem ipsum dolor sit amet consec tetur adipisicing</h1>
+              <h1 class="article-title">IPL final score prediction</h1>
               <ul>
                 <li>
                   <span class="ion-ios-person"></span>
-                  <a href="#">Jason London</a>
+                  <a href="#">Ravikumar</a>
                 </li>
                 <li>
                   <span class="ion-pricetag"></span>
-                  <a href="#">Web Design</a>
+                  <a href="#">Machine learning</a>
                 </li>
                 <li>
                   <span class="ion-chatbox"></span>
-                  <a href="#">14</a>
+                  <a href="#">2</a>
                 </li>
               </ul>
             </div>
             <div class="article-content">
               <p>
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                porta. Quisque velit
-                nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque
-                nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                Nulla quis lorem ut libero malesuada feugiat.
+                Introduction
+                <br>
+              Cricket has evolved over the years, with technology playing a significant role in transforming the game both on and off 
+              the field. One area where technology has made substantial advancements is in cricket analytics. With the rise of machine 
+              learning and data science, predicting match outcomes and individual player performances has become more accurate and 
+              reliable. In this blog essay, we explore the exciting world of IPL final score prediction using the PyCaret module, 
+              and how it is revolutionizing cricket analytics.
               </p>
               <p>
-                Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit
-                aliquet elit, eget tincidunt
-                nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Donec sollicitudin molestie malesuada.
+              PyCaret is an open-source Python module that simplifies the end-to-end machine learning workflow. It provides a high-level 
+              interface and automates various stages of ML model building, including data preprocessing, feature selection, model 
+              training, hyperparameter tuning, and model evaluation. PyCaret's easy-to-use and intuitive nature make it an ideal choice 
+              for predicting IPL final scores accurately.
               </p>
               <p>
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Praesent
-                sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                sem. Donec rutrum congue leo eget malesuada.
+                After data is preprocessed and trained the resluted model is stored in Google Cloud since we can large files esily in Git.
+                After that model is retreived and used for predictions 
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.
-                Curabitur arcu erat,
-                accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor
-                volutpat. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium
-                ut lacinia in, elementum id enim.
+                The whole repo is containerized and pushed to docker repository and then to Google's Artifacct repository and deployed using GKE autopiolet
+                
               </p>
               <blockquote class="blockquote">
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <p class="mb-0">Docker image at Docker hub {ravikumarchavva}</p>
               </blockquote>
-              <p>
-                Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Mauris blandit
-                aliquet elit, eget tincidunt
-                nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Donec sollicitudin molestie malesuada.
-              </p>
             </div>
           </div>
           <div class="box-comments">
@@ -282,19 +271,13 @@
             <div class="sidebar-content">
               <ul class="list-sidebar">
                 <li>
-                  <a href="#">Atque placeat maiores.</a>
+                  <a href="#">Made a docker image and used in kubernates engine to deploy</a>
                 </li>
                 <li>
-                  <a href="#">Lorem ipsum dolor sit amet consectetur</a>
+                  <a href="#">Model size became very big so using it from GCP</a>
                 </li>
                 <li>
-                  <a href="#">Nam quo autem exercitationem.</a>
-                </li>
-                <li>
-                  <a href="#">Atque placeat maiores nam quo autem</a>
-                </li>
-                <li>
-                  <a href="#">Nam quo autem exercitationem.</a>
+                  <a href="#">Started with full data since the cor-relation between powerplay runs and final runs are not much stron</a>
                 </li>
               </ul>
             </div>
@@ -304,19 +287,10 @@
             <div class="sidebar-content">
               <ul class="list-sidebar">
                 <li>
-                  <a href="#">September, 2017.</a>
+                  <a href="#">May, 2023. started the Idea</a>
                 </li>
                 <li>
-                  <a href="#">April, 2017.</a>
-                </li>
-                <li>
-                  <a href="#">Nam quo autem exercitationem.</a>
-                </li>
-                <li>
-                  <a href="#">Atque placeat maiores nam quo autem</a>
-                </li>
-                <li>
-                  <a href="#">Nam quo autem exercitationem.</a>
+                  <a href="#">June, 2023. Did the same model with only power play runs as input</a>
                 </li>
               </ul>
             </div>
@@ -326,22 +300,19 @@
             <div class="sidebar-content">
               <ul>
                 <li>
-                  <a href="#">Web.</a>
+                  <a href="#">Machine Learning</a>
                 </li>
                 <li>
-                  <a href="#">Design.</a>
+                  <a href="#">Flask</a>
                 </li>
                 <li>
-                  <a href="#">Travel.</a>
+                  <a href="#">Google cloud</a>
                 </li>
                 <li>
-                  <a href="#">Photoshop</a>
+                  <a href="#">Docker</a>
                 </li>
                 <li>
-                  <a href="#">Corel Draw</a>
-                </li>
-                <li>
-                  <a href="#">JavaScript</a>
+                  <a href="#">Google Kubernates engine</a>
                 </li>
               </ul>
             </div>
@@ -360,7 +331,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+              <p class="copyright">&copy; Copyright <strong>PortFolio</strong>. All Rights Reserved</p>
               <div class="credits">
                 <!--
                   All the links in the footer should remain intact.
@@ -368,7 +339,7 @@
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
                 -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="https://github.com/Ravikumarchavva">Ravikumar</a>
               </div>
             </div>
           </div>

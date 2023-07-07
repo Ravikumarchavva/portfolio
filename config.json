@@ -10,9 +10,10 @@
         "gmail-pass":"lklxiyjomepbyhzz"
     },
     "models":{
-        "ipl_model_1": "ipl_model_1.joblib",
-        "ipl_model_2":"ipl_model_2.pkl"
-
+        "IPL Predict":"gs://githubml_models/ipl_models/ipl_pycaret.pkl"
+    },
+    "keys":{
+        "google-drive": "healthy-genre-391115-f36176b04acf.json"
     }
 
 }
