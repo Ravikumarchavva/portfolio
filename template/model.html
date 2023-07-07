@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<script>
+  function updateTeams() {
+    var battingTeamSelect = document.getElementById("bt");
+    var bowlingTeamSelect = document.getElementById("bo");
+    var tossWinnerSelect = document.getElementById("tw");
+    
+    var selectedBattingTeam = battingTeamSelect.value;
+    var selectedBowlingTeam = bowlingTeamSelect.value;
+    
+    // Enable all options first
+    for (var i = 0; i < bowlingTeamSelect.options.length; i++) {
+      bowlingTeamSelect.options[i].disabled = false;
+    }
+    for (var i = 0; i < battingTeamSelect.options.length; i++) {
+      battingTeamSelect.options[i].disabled = false;
+    }
+    
+    // Disable selected team in the other dropdown
+    if (selectedBattingTeam !== '0') {
+      for (var i = 0; i < bowlingTeamSelect.options.length; i++) {
+        if (bowlingTeamSelect.options[i].value === selectedBattingTeam) {
+          bowlingTeamSelect.options[i].disabled = true;
+          break;
+        }
+      }
+    }
+    
+    if (selectedBowlingTeam !== '0') {
+      for (var i = 0; i < battingTeamSelect.options.length; i++) {
+        if (battingTeamSelect.options[i].value === selectedBowlingTeam) {
+          battingTeamSelect.options[i].disabled = true;
+          break;
+        }
+      }
+    }
+    
+    // Update options for toss_winner
+    tossWinnerSelect.innerHTML = '';
+    if (selectedBattingTeam !== '0') {
+      var option = document.createElement("option");
+      option.value = selectedBattingTeam;
+      option.text = selectedBattingTeam;
+      tossWinnerSelect.add(option);
+    }
+    if (selectedBowlingTeam !== '0') {
+      var option = document.createElement("option");
+      option.value = selectedBowlingTeam;
+      option.text = selectedBowlingTeam;
+      tossWinnerSelect.add(option);
+    }
+  }
+</script> 
+
+
+
+ <section id="about" class="about-mf" style="background-image: url({{url_for('static',filename='img/overlay-bg.jpg')}}); backgound-position:cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full" style="background-image: url({{url_for('static',filename='img/ipl-fig.jpg')}})">
+            <div class="row">
+              <div class="col-md-6">
+                </div>
+              </div>
+                  <div class="title-box-2">
+                    <h2 >
+                      Ipl Final Score Predict
+                    </h2>
+                  </div>
+                  <form action="{{url_for('get_ipl_fsp')}}" method="post" role="form" class="contactform">
+                  <label class="form-label"> Batting Team :</label> <select name="batting_team" id="bt" required onchange="updateTeams()">
+                      <option value="0">--select batting_team--</option>
+                      {% for i in teams %}
+                        <option value="{{ i }}">{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                    <label class="form-label"> bowling_team:</label><select name="bowling_team" id="bo" required onchange="updateTeams()">
+                      <option value="0">--select bowling_team--</option>
+                      {% for i in teams %}
+                        <option value="{{ i }}">{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                    <label class="form-label">city_name:</label><select name="city_name" id="cn" required>
+                      <option value="">--select city name--</option>
+                      {% for i in c_names %}
+                        <option value="{{ i }}">{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                    <label class="form-label">toss_winner:</label><select name="toss_win" id="tw" required>
+                      <option value="">--select toss_winner--</option>
+                      {% for i in tt %}z
+                        <option value="{{ i }}">{{ i }}</option>
+                      {% endfor %}
+                    </select>
+                    <label class="form-label"> toss_decision :</label><select name="toss_decisions" id="td" required>
+                      <option value="0">field</option>
+                      <option value="1">bat</option>
+                    </select>
+                    <label class="form-label"> inning: </label><select type="integer" name="inning" required placeholder="1">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                    </select>
+                    <label class="form-label"> current_runs: </label><input name="current_runs" min="0" max="300" type="number" id="current_runs" placeholder="100" required>
+                     <label class="form-label"> current_wickets:</label> <input name="current_wickets" min="0" max="10" type="number" id="current_wickets" placeholder="2" required>
+                    <label class="form-label"> current_ball:</label> <input name="current_ball" min="6.0" max="20.0" step="any" type="number" id="current_ball" placeholder="10.4(>6)" required>
+                    <input type="submit" value="submit" class="button button-a button-big button-rouded">
+                  </form>
+                    <div>
+                      <h2>Final predicted score is :{{score}}</h2>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  </section>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+{%extends "layout.html" %}
+{% block body %}
+
+<div class="section-counter paralax-mf bg-image" style="background-image: url({{url_for('static',filename='img/counters-bg.jpg')}})">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">0</p>
+              <span class="counter-text">WORKS COMPLETED</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">0</p>
+              <span class="counter-text">YEARS OF EXPERIENCE</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ios-people"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">0</p>
+              <span class="counter-text">TOTAL CLIENTS</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-3">
+          <div class="counter-box pt-4 pt-md-0">
+            <div class="counter-ico">
+              <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
+            </div>
+            <div class="counter-num">
+              <p class="counter">0</p>
+              <span class="counter-text">AWARD WON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--/ Section Portfolio Star /-->
+<section id="work" class="portfolio-mf sect-pt4 route">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="title-box text-center">
+          <h4 class="title-a">
+            Portfolio
+          </h4>
+          <p class="subtitle-a">
+              projects that i did
+          </p>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="work-box">
+          <a href="model.html" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="{{url_for('static',filename='img/ipl-fig.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">{{model_n['name']}}</h2>
+                  <div class="w-more">
+                    <span class="w-ctegory">ML model</span> / <span class="w-date">18 June. 2023</span>
+                    <a class="nav-link" href="/ipl_fsp"><h4>{{mod[1]}}</h4></a>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Section Portfolio End /-->
+
+  <!--/ Section Testimonials Star /-->
+  <div class="testimonials paralax-mf bg-image" style="background-image: url({{url_for('static',filename='img/overlay-bg.jpg')}})">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="testimonial-mf" class="owl-carousel owl-theme">
+            <div class="testimonial-box">
+              <div class="author-test">
+                <img src="{{url_for('static',filename='img/testimonial-2.jpg')}}" alt="" class="rounded-circle b-shadow-a">
+                <span class="author">Ravi kumar</span>
+              </div>
+              <div class="content-test">
+                <p class="description lead">
+                  I am a passionate and dedicated data science student with a strong intrest to lean and implement new models 
+                </p>
+                <span class="comit"><i class="fa fa-quote-right"></i></span>
+              </div>
+            </div>
+            <div class="testimonial-box">
+              <div class="author-test">
+                <img src="{{url_for('static',filename='img/testimonial-4.jpg')}}" alt="" class="rounded-circle b-shadow-a">
+                <span class="author">Chat Gpt</span>
+              </div>
+              <div class="content-test">
+                <p class="description lead">
+                  AI tools helped us in code assistance,data exploration and made error handling ease
+                </p>
+                <span class="comit"><i class="fa fa-quote-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock %}
