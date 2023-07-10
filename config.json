@@ -1,6 +1,6 @@
 {
     "params":{
-        "db_uri": "portfolio.db",
+        "db_uri": "portfolio.sqlite",
         "fb_url":"https://www.facebook.com/ravikumar.chavva.94?mibextid=ZbWKwL",
         "ins_url":"https://www.instagram.com/r_a_v_i_k_u__m_a_r/",
         "twitter_url":"https://twitter.com/Ravikumarchavva",
