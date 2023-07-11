@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "work-layout.html" %}
 {% block body %}
 
 <script>
@@ -74,40 +74,40 @@
                   </div>
                   <form action="{{url_for('get_ipl_fsp')}}" method="post" role="form" class="contactform">
                   <label class="form-label"> Batting Team :</label> <select name="batting_team" id="bt" required onchange="updateTeams()">
-                      <option value="0">--select batting_team--</option>
+                      <option value="">--select batting_team--</option>
                       {% for i in teams %}
                         <option value="{{ i }}">{{ i }}</option>
                       {% endfor %}
                     </select>
-                    <label class="form-label"> bowling_team:</label><select name="bowling_team" id="bo" required onchange="updateTeams()">
-                      <option value="0">--select bowling_team--</option>
+                    <label class="form-label"> Bowling Team:</label><select name="bowling_team" id="bo" required onchange="updateTeams()">
+                      <option value="">--select bowling_team--</option>
                       {% for i in teams %}
                         <option value="{{ i }}">{{ i }}</option>
                       {% endfor %}
                     </select>
-                    <label class="form-label">city_name:</label><select name="city_name" id="cn" required>
+                    <label class="form-label">City name:</label><select name="city_name" id="cn" required>
                       <option value="">--select city name--</option>
                       {% for i in c_names %}
                         <option value="{{ i }}">{{ i }}</option>
                       {% endfor %}
                     </select>
-                    <label class="form-label">toss_winner:</label><select name="toss_win" id="tw" required>
+                    <label class="form-label">Toss winner:</label><select name="toss_win" id="tw" required>
                       <option value="">--select toss_winner--</option>
                       {% for i in tt %}z
                         <option value="{{ i }}">{{ i }}</option>
                       {% endfor %}
                     </select>
-                    <label class="form-label"> toss_decision :</label><select name="toss_decisions" id="td" required>
+                    <label class="form-label"> Toss decision :</label><select name="toss_decisions" id="td" required>
                       <option value="0">field</option>
                       <option value="1">bat</option>
                     </select>
-                    <label class="form-label"> inning: </label><select type="integer" name="inning" required placeholder="1">
+                    <label class="form-label"> Inning: </label><select type="integer" name="inning" required placeholder="1">
                       <option value="1">1</option>
                       <option value="2">2</option>
                     </select>
-                    <label class="form-label"> current_runs: </label><input name="current_runs" min="0" max="300" type="number" id="current_runs" placeholder="100" required>
-                     <label class="form-label"> current_wickets:</label> <input name="current_wickets" min="0" max="10" type="number" id="current_wickets" placeholder="2" required>
-                    <label class="form-label"> current_ball:</label> <input name="current_ball" min="6.0" max="20.0" step="any" type="number" id="current_ball" placeholder="10.4(>6)" required>
+                    <label class="form-label"> Current runs: </label><input name="current_runs" min="0" max="300" type="number" id="current_runs" placeholder="100" required>
+                     <label class="form-label"> Current wickets:</label> <input name="current_wickets" min="0" max="10" type="number" id="current_wickets" placeholder="2" required>
+                    <label class="form-label"> :</label> <input name="current_ball" min="6.0" max="20.0" step="any" type="number" id="current_ball" placeholder="10.4(>6)" required>
                     <input type="submit" value="submit" class="button button-a button-big button-rouded">
                   </form>
                     <div class="ipl-heading">

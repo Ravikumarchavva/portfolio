@@ -56,7 +56,7 @@ def home():
       except Exception as e:
          flash("message not sent,plz try again")
          return  render_template("index.html",params=par,model_n=m,mod=list(model_names.keys()))
-   return render_template("index.html",params=par,mod=list(model_names.keys()),model_n=m,msg_status='')
+   return render_template("index.html",params=par,mod=list(model_names.keys()),model_n=m)
 
 
 
@@ -90,7 +90,7 @@ def get_ipl_fsp():
       current_ball=request.form.get("current_ball")
       score=ipl_predict(inning,bat,bowl,city_input,toss_winner,toss_decision,current_runs,current_wickets,current_ball)
       return render_template("model.html",params=par,mod=model,score=score,tt=toss_teams,td=toss_decision,c_names=city_names,teams=teams)
-   return render_template("model.html",params=par,mod=model,score="calculate",tt=toss_teams,td=toss_decisions,c_names=city_names,teams=teams)
+   return render_template("model.html",params=par,mod=model,score="",tt=toss_teams,td=toss_decisions,c_names=city_names,teams=teams)
 @app.route("/blog-single.html",methods=["GET","POST"])
 def bs():
    return render_template("blog-single.html")
