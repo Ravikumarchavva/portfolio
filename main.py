@@ -51,11 +51,9 @@ def home():
                   body=msg)
       try:
          mail.send(send_mess)
-         flash("your messaage has sent successfully")
-         return render_template("index.html",params=par,model_n=m,mod=list(model_names.keys()))
+         return "message sent"
       except Exception as e:
-         flash("message not sent,plz try again")
-         return  render_template("index.html",params=par,model_n=m,mod=list(model_names.keys()))
+         return  "error message not sent,plz try again"
    return render_template("index.html",params=par,mod=list(model_names.keys()),model_n=m)
 
 
