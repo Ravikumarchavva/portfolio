@@ -11,6 +11,7 @@ with open("config.json",'r') as f:
 with open("config.json",'r') as f:
    model_names=json.load(f)['models']
 app = Flask(__name__,template_folder='template',static_folder='static')
+app.config['SECRET_KEY'] = "22333750e9c15fba0af1a73752d3c855"
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
@@ -40,24 +41,22 @@ def home():
       email= request.form.get("email")
       about= request.form.get("subject")
       msg= request.form.get("message")
-      try:
-         cur.execute(f"insert into Contact (name,mail,subject,message) \
-                     values ('{username}', '{email}','{about}','{msg}')  " )
-         con.commit()
-         con.close()
-      except Exception as e:
-         print(e)
-      send_mess = Message("you got a mail from "+ email,
+      cur.execute(f"insert into Contact (name,mail,subject,message) \
+                  values ('{username}', '{email}','{about}','{msg}')  " )
+      con.commit()
+      con.close()
+      send_mess = Message(email,
                   sender=email,
                   recipients=[par['gmail-user']],
                   body=msg)
       try:
          mail.send(send_mess)
-         return render_template("index.html",params=par,msg_status="message sent",model_n=m,mod=list(model_names.keys()))
+         flash("your messaage has sent successfully")
+         return render_template("index.html",params=par,model_n=m,mod=list(model_names.keys()))
       except Exception as e:
-         print(e)
-         return  render_template("index.html",params=par,msg_status="message not sent",model_n=m,mod=list(model_names.keys()))
-   return render_template("index.html",params=par,mod=list(model_names.keys()),model_n=m)
+         flash("message not sent,plz try again")
+         return  render_template("index.html",params=par,model_n=m,mod=list(model_names.keys()))
+   return render_template("index.html",params=par,mod=list(model_names.keys()),model_n=m,msg_status='')
 
 
 
